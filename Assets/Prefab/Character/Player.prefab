@@ -2016,6 +2016,7 @@ GameObject:
   - component: {fileID: 6550622385711987195}
   - component: {fileID: 2881451417652317317}
   - component: {fileID: 2532691110383600347}
+  - component: {fileID: 8452294974448127671}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2068,6 +2069,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InputReader>k__BackingField: {fileID: 6550622385711987195}
+  <Controller>k__BackingField: {fileID: 8452294974448127671}
+  MovementVector: {x: 0, y: 0, z: 0}
+  animatorController: {fileID: 0}
 --- !u!95 &2532691110383600347
 Animator:
   serializedVersion: 7
@@ -2090,6 +2094,31 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!143 &8452294974448127671
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427428656210440599}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.25
+  m_SlopeLimit: 45
+  m_StepOffset: 0.875
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.84, z: 0}
 --- !u!1 &7521190255147831617
 GameObject:
   m_ObjectHideFlags: 0

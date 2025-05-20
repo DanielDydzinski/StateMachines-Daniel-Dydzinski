@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 /*
  * State machine specifically for managing player states.
@@ -10,13 +11,31 @@ public class PlayerStateMachine : StateMachine
     [field:SerializeField]
     public InputReader InputReader{  get; private set; }
 
+    [field:SerializeField]
+    public CharacterController Controller{  get; private set; }
+
+    public Vector3 MovementVector;
+    public AnimatorController animatorController;
+    
+    [field:SerializeField]
+    public Animator Animator { get; private set; }
+
+   [field:SerializeField]
+    public float playerSpeed { get; private set; }
+
+    //Camera Movement Variables 
+    [field: SerializeField] public float RotationDamping { get; private set; }
+    [field:SerializeField] public float FreeLookMovementSpeed { get; private set; }
+    public Transform MainCameraTransform { get; private set; }
     /*
      * Intialise the player state machine by setting the initial state.
      */
     private void Start()
     {
+
+        MainCameraTransform = Camera.main.transform; 
         //Switch the initial player state at the start of the game.
-        SwitchState(new PlayerTestState(this));
-        
+        SwitchState(new PlayerFreeLookState(this));
+
     }
 }

@@ -22,6 +22,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         controls = new Controls();
         controls.Player.SetCallbacks(this);
         controls.Player.Enable();
+        
     }
 
     private void OnDestroy()
@@ -46,11 +47,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         //This is how you capture value
         MovementValue = context.ReadValue<Vector2>();
+        Debug.Log("movement vector" + MovementValue);
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
         LookValue = context.ReadValue<Vector2>();
+        Debug.Log("lookValue = " + LookValue);
     }
 
 
